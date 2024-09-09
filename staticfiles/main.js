@@ -46,7 +46,6 @@ function fetchTodos() {
     }).then(() => fetchTodos());
 }
 
-console.log("jsnvcvbn")
 // Function to add a new task
 document.getElementById('todoForm').addEventListener('submit', function (event) {
     event.preventDefault();  // Prevent form submission
