@@ -16,13 +16,13 @@ function fetchTodos() {
                 listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
                 listItem.innerHTML = `
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check${todo.id}" ${checked} onchange="toggleComplete(${todo.id})">
-                        <label class="form-check-label ${completedClass}" for="check${todo.id}">
-                            <h5>${todo.title}</h5>
-                            <p>${todo.description}</p>
-                        </label>
+                    <label class="form-check-label ${completedClass}" for="check${todo.id}">
+                    <h5>${todo.title}</h5>
+                    <p>${todo.description}</p>
+                    </label>
                     </div>
                     <div>
+                    <input class="form-check-input mx-5" type="checkbox" id="check${todo.id}" ${checked} onchange="toggleComplete(${todo.id})">
                         <button class="btn btn-sm btn-warning me-2" onclick="editTask(${todo.id})">Edit</button>
                         <button class="btn btn-sm btn-danger" onclick="deleteTask(${todo.id})">Delete</button>
                         </div>
