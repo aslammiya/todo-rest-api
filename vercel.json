@@ -1,24 +1,20 @@
 {
     "version": 2,
     "builds": [
-    {
-    "src": "todo/wsgi.py",
-    "use": "@vercel/python",
-    "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    },
-    {
-    "src": "build_files.sh",
-    "use": "@vercel/static-build"
-    }
+      {
+        "src": "requirements.txt",
+        "use": "@vercel/python"
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build"
+      }
     ],
     "routes": [
-    {
-    "src": "/static/(.*)",
-    "dest": "/static/$1"
-    },
-    {
-    "src": "/(.*)",
-    "dest": "todo/wsgi.py"
-    }
+      {
+        "src": "/(.*)",
+        "dest": "todo.wsgi:app"
+      }
     ]
-}
+  }
+  
